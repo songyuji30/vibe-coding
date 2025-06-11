@@ -8,6 +8,7 @@ Windsurf는 프론트엔드(React+Mantine)와 백엔드(Serverless, AWS)로 구�
 - **백엔드**: AWS Lambda, API Gateway, DynamoDB, AWS CDK
 - **CI/CD**: Github Actions 기반 테스트 및 자동 배포
 - **설계/요건/체크리스트 문서화**: `docs/` 폴더에 상세 관리
+- **개발 전략**: 프론트엔드를 독립적으로 완성한 뒤, 서비스 레이어(API 클라이언트) 교체만으로 백엔드에 연동하는 구조. 프론트 개발 및 테스트, 사용자 피드백을 백엔드와 무관하게 선반영하고, 연동 시 기존 UI/상태/테스트를 최대한 재사용
 
 ## 개발 환경 및 워크플로우
 - pnpm 기반 Monorepo
