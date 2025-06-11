@@ -115,18 +115,21 @@ export default function TodoList({ todos, onUpdate, onDelete, mobile }: TodoList
                 color="teal"
               />
             </Table.Td>
-            <Table.Td>
-              <span
-                style={{
-                  color: todo.status === 'completed' ? '#aaa' : '#222',
-                  textDecoration: todo.status === 'completed' ? 'line-through' : 'none',
-                  fontWeight: 600,
-                  fontSize: 17
-                }}
-              >
-                {todo.title}
-              </span>
-            </Table.Td>
+            <Table.Td
+  style={{
+    textDecoration: todo.status === 'completed' ? 'line-through' : 'none'
+  }}
+>
+  <span
+    style={{
+      color: todo.status === 'completed' ? '#aaa' : '#222',
+      fontWeight: 600,
+      fontSize: 17
+    }}
+  >
+    {todo.title}
+  </span>
+</Table.Td>
             <Table.Td>
               <span
                 style={{

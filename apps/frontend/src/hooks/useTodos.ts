@@ -6,18 +6,24 @@ export default function useTodos() {
   const [search, setSearch] = useState('');
 
   const handleAdd = (input: { title: string; status: 'active' | 'completed'; priority: number }) => {
-    addTodo(input);
-    setTodos(getTodos());
+    const newTodo = addTodo(input);
+    setTodos(prevTodos => [newTodo, ...prevTodos]);
   };
 
   const handleUpdate = (id: string, updates: Partial<Omit<Todo, 'id' | 'createdAt'>>) => {
-    const updated = updateTodo(id, updates);
-    if (updated) setTodos([...getTodos()]);
+    const updatedTodo = updateTodo(id, updates);
+    if (updatedTodo) {
+      setTodos(prevTodos =>
+        prevTodos.map(todo => (todo.id === id ? updatedTodo : todo))
+      );
+    }
   };
 
   const handleDelete = (id: string) => {
     const ok = deleteTodo(id);
-    if (ok) setTodos([...getTodos()]);
+    if (ok) {
+      setTodos(prevTodos => prevTodos.filter(todo => todo.id !== id));
+    }
   };
 
   const filteredTodos = search.trim()

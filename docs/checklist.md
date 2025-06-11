@@ -52,8 +52,8 @@
   - > **Commit:** `refactor(frontend): Extract useTodos custom hook for state management`
 
 ## 3단계: 프론트엔드 앱 통합(e2e) 테스트
-- [ ] **3-1. 프론트엔드 통합테스트**
-  - [ ] 프론트엔드 전체 통합(e2e) 테스트 코드 작성 및 실행
+- [x] **3-1. 프론트엔드 통합테스트**
+  - [x] 프론트엔드 전체 통합(e2e) 테스트 코드 작성 및 실행
   - > **Commit:** `test(frontend): Add e2e integration tests for UI/서비스 연동`
 
 ## 4단계: UI/UX 고도화 및 CI/CD
