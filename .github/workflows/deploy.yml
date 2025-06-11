@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-and-deploy:
+  test-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -19,6 +19,16 @@ jobs:
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
+
+      # Playwright E2E 테스트 단계
+      - name: Install Playwright Browsers
+        working-directory: ./apps/frontend
+        run: pnpm exec playwright install --with-deps
+      - name: Run Playwright tests
+        working-directory: ./apps/frontend
+        run: pnpm exec playwright test
+
+      # 빌드 및 배포 단계
       - name: Build frontend
         working-directory: ./apps/frontend
         run: pnpm build
