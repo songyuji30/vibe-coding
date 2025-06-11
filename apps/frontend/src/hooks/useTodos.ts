@@ -6,8 +6,8 @@ export default function useTodos() {
   const [search, setSearch] = useState('');
 
   const handleAdd = (input: { title: string; status: 'active' | 'completed'; priority: number }) => {
-    const newTodo = addTodo(input);
-    setTodos([newTodo, ...getTodos()]);
+    addTodo(input);
+    setTodos(getTodos());
   };
 
   const handleUpdate = (id: string, updates: Partial<Omit<Todo, 'id' | 'createdAt'>>) => {

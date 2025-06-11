@@ -31,7 +31,18 @@
   - [x] 로컬스토리지 기반 CRUD 함수 구현 및 테스트 통과
   - > **Commit:** `feat(frontend/core): Implement localStorage CRUD logic (TDD)`
 - [x] **2-2. 기본 UI 컴포넌트(Mantine 기반)**
-  - [x] `TodoForm`, `TodoList`, `TodoItem` 등 구현 (Mantine 컴포넌트 활용)
+  - [x] TodoForm onClose 핸들러 타입 안전성 개선 (onClose={() => { if (onClose) onClose(); }} 적용)
+  - [x] 할 일 중복 추가 및 동시 삭제 버그 수정
+  - [x] 모바일/데스크톱 UI 분기 로직 점검 및 반영
+- [x] 데스크톱/모바일에서 앱이 브라우저를 넘지 않고, 내용이 꽉 차게 표시되도록 CSS 구조 통일 및 리팩터링
+- [x] .app-bg, .app-center-wrapper, .app-card, .todo-list-wrapper, .mantine-Table-root 등 주요 컨테이너 width/max-width/padding/box-sizing/overflow-x 일관화
+- [x] table-layout: fixed, 컬럼 min-width/padding 조정, 내부 여백 최소화
+- [x] #root 배경색/패딩 제거, 데스크톱에서 최대한 넓게 표시되도록 개선
+- [x] 모바일/데스크톱 모두 넉넉한 공간감, 큰 폰트, 가독성 강화
+- [x] 이미지처럼 꽉 차고 예쁜 레이아웃 구현
+- [x] checklist.md 업데이트 및 커밋
+  - [ ] 빌드 및 테스트 필요확인
+  - [x] `TodoItem` 등 구현 (Mantine 컴포넌트 활용)
   - > **Commit:** `feat(frontend/ui): Implement basic UI components with Mantine`
 - [x] **2-3. UI와 서비스 연동**
   - [x] UI 컴포넌트와 서비스 로직 연동 (추가/수정/삭제/조회)
@@ -70,7 +81,7 @@
 - [ ] **5-2. 반응형/다크모드(Mantine 기능 활용)**
   - [x] Mantine의 컬러스킴 및 반응형 시스템 적용 (useMediaQuery, Affix 등)
   - [x] 데스크톱/모바일 와이어프레임 기반 반응형 레이아웃 구현 (UI 구조/배치 완료)
-  - [x] lint 에러 및 의존성(@tabler/icons-react) 해결, 빌드 정상화
+  - [x] lint 에러, 의존성(@tabler/icons-react) 및 타입 선언(global.d.ts 통한 CSS import) 문제 해결, 빌드 정상화
   - [ ] 다크모드 컬러스킴/세부 스타일 개선(추가 예정)
   - > **Commit:** `feat(frontend/ui): Apply responsive design and dark mode`
 - [ ] **5-3. CI/CD 파이프라인 구축**
