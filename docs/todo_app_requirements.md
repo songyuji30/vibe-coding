@@ -5,11 +5,27 @@
 
 ---
 
-## 기술 스택
-- **프론트엔드**: React, Tailwind CSS
+## 기술 스택 및 관리 방식
+- **프론트엔드**: React, Mantine
 - **백엔드**: Node.js (서버리스)
 - **빌드 도구**: Vite
 - **인프라**: AWS CDK로 서버리스 아키텍처 사용 ( API Gateway, Lambda, DynamoDB )
+- **프로젝트 관리**: 프론트엔드와 백엔드를 하나의 저장소(모노레포)에서 통합 관리 (예: pnpm, yarn workspaces 등 지원)
+
+## 폴더 구조 예시
+
+```
+root/
+├── apps/
+│   ├── frontend/   # 프론트엔드(React+Mantine)
+│   └── backend/    # 백엔드(AWS Lambda, CDK 등)
+├── packages/       # (선택) 공통 유틸리티, 타입 등 공유 패키지
+├── docs/           # 설계 및 문서
+├── node_modules/   # 루트 의존성
+├── package.json    # 루트 패키지 관리
+├── pnpm-workspace.yaml # (pnpm 사용 시) 워크스페이스 설정
+└── ...
+```
 
 ---
 

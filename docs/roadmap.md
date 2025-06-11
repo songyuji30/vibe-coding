@@ -9,7 +9,7 @@
 
 - [ ] **1-1. 프로젝트 초기 설정 및 도구 구성**
   - [ ] Vite와 React 템플릿으로 프로젝트 생성
-  - [ ] Tailwind CSS 설치 및 설정 파일 구성
+  - [ ] Mantine UI 설치 및 `MantineProvider` 설정
   - [ ] ESLint, Prettier를 통한 코드 포맷팅 및 품질 규칙 설정
   - [ ] `components`, `services`, `hooks` 등 기본 폴더 구조 정의
   - > **Commit:** `feat: Initial project setup with Vite, React, and Tailwind CSS`
@@ -24,8 +24,8 @@
   - [ ] `TodoForm.jsx`: 새 할 일을 입력받는 폼
   - [ ] `TodoList.jsx`: 할 일 목록을 렌더링하는 컨테이너
   - [ ] `TodoItem.jsx`: 개별 할 일 항목 (체크박스, 삭제 버튼 포함)
-  - [ ] Tailwind CSS를 사용한 기본 스타일링 적용
-  - > **Commit:** `feat(ui): Implement basic UI components for todo management`
+  - [ ] Mantine 컴포넌트(`TextInput`, `Button`, `List`, `Checkbox`)를 사용한 기본 스타일링 적용
+  - > **Commit:** `feat(ui): Implement basic UI components with Mantine`
 
 - [ ] **1-4. 상태 관리 및 UI-로직 연동**
   - [ ] `App.jsx`에서 `useState`, `useEffect`를 사용해 할 일 목록 상태 관리
@@ -83,9 +83,9 @@
   - > **Commit:** `feat(ui): Implement todo filtering and search functionality`
 
 - [ ] **4-2. 디자인 시스템 개선**
-  - [ ] Tailwind CSS의 반응형 중단점(`sm`, `md`, `lg`)을 사용하여 모바일/태블릿/데스크톱 레이아웃 최적화
-  - [ ] 다크/라이트 모드 테마 토글 기능 구현 (`localStorage`에 사용자 선택 저장)
-  - > **Commit:** `feat(ui): Add responsive design and dark mode support`
+  - [ ] Mantine의 반응형 시스템을 사용하여 모바일/데스크톱 레이아웃 최적화
+  - [ ] Mantine의 내장 컬러 스킴 기능을 사용하여 다크/라이트 모드 토글 기능 구현
+  - > **Commit:** `feat(ui): Add responsive design and dark mode support using Mantine`
 
 ### 5단계: CI/CD 파이프라인
 

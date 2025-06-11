@@ -95,4 +95,42 @@
 
 ---
 
+## 폴더 구조 예시 (상세)
+
+```
+root/
+├── apps/
+│   ├── frontend/                # 프론트엔드(React+Mantine)
+│   │   ├── public/              # 정적 파일 (favicon, index.html 등)
+│   │   ├── src/
+│   │   │   ├── components/      # UI 컴포넌트
+│   │   │   ├── pages/           # 페이지 단위 컴포넌트
+│   │   │   ├── hooks/           # 커스텀 훅
+│   │   │   ├── services/        # API/비즈니스 로직 (예: todoService.ts, apiClient.ts)
+│   │   │   ├── styles/          # 전역 스타일/테마
+│   │   │   ├── App.tsx
+│   │   │   └── main.tsx
+│   │   ├── tests/               # 프론트엔드 단위/통합 테스트
+│   │   ├── package.json
+│   │   └── ...
+│   └── backend/                 # 백엔드(AWS Lambda, CDK 등)
+│       ├── cdk/                 # AWS CDK 인프라 코드
+│       │   ├── lib/             # 스택 정의 (예: dynamodb-stack.ts, lambda-stack.ts 등)
+│       │   ├── bin/             # CDK 엔트리포인트
+│       │   └── cdk.json
+│       ├── lambdas/             # Lambda 함수 소스
+│       │   ├── handlers/        # 각 기능별 핸들러 (예: createTodo.ts, getTodos.ts 등)
+│       │   └── tests/           # Lambda 단위 테스트
+│       ├── package.json
+│       └── ...
+├── packages/                    # (선택) 공통 유틸리티, 타입 등 공유 패키지
+├── docs/                        # 설계 및 문서
+├── node_modules/
+├── package.json                 # 루트 패키지 관리
+├── pnpm-workspace.yaml          # (pnpm 사용 시) 워크스페이스 설정
+└── ...
+```
+
+---
+
 이 설계서를 기반으로 각 단계별로 TDD 및 상세 구현을 진행할 수 있습니다. 추가로 상세 설계가 필요한 부분이 있다면 말씀해 주세요.
