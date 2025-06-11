@@ -1,0 +1,98 @@
+# TODO 웹 앱 설계서
+
+## 1. 시스템 아키텍처
+
+- **프론트엔드**: React + Tailwind CSS, Vite 기반 SPA
+- **백엔드**: Node.js (AWS Lambda), API Gateway, DynamoDB
+- **인증**: AWS Cognito
+- **배포**: 
+  - 프론트엔드: Github Pages
+  - 백엔드: AWS (CDK 사용)
+- **CI/CD**: Github Actions
+
+### 아키텍처 다이어그램  
+<p align="center">
+  <img src="./diagrams/architecture.svg" alt="상세 아키텍처 다이어그램" width="800" height="450" />
+</p>
+
+## 2. 주요 컴포넌트 설계
+
+### 프론트엔드
+- **할 일 목록/추가/수정/삭제 컴포넌트**
+- **로그인/회원가입 컴포넌트** (AWS Cognito 연동)
+- **상태/우선순위 필터 컴포넌트**
+- **검색 바**
+- **반응형 레이아웃 및 다크모드 토글**
+- **로컬스토리지/서버 데이터 동기화 모듈**
+
+### 백엔드 (Lambda)
+- **할 일 CRUD API**
+- **인증 미들웨어 (Cognito JWT 검증)**
+- **에러/예외 처리**
+- **데이터 검증 및 보안 로직**
+
+## 3. 데이터 모델 설계
+
+### 할 일(Todo)  
+| 필드명      | 타입      | 설명                |
+|-------------|-----------|---------------------|
+| id          | string    | UUID                |
+| userId      | string    | 사용자 식별자       |
+| title       | string    | 할 일 제목          |
+| status      | string    | 상태(완료/미완료)   |
+| priority    | number    | 우선순위(1~3 등급)  |
+| createdAt   | datetime  | 생성일              |
+| updatedAt   | datetime  | 수정일              |
+
+### 사용자(User)
+- Cognito에서 관리 (userId, email 등)
+
+## 4. API 설계
+
+| 메서드 | 경로         | 설명         | 인증 |
+|--------|--------------|--------------|------|
+| GET    | /todos       | 할 일 목록 조회 | O   |
+| POST   | /todos       | 할 일 추가     | O   |
+| PUT    | /todos/{id}  | 할 일 수정     | O   |
+| DELETE | /todos/{id}  | 할 일 삭제     | O   |
+| POST   | /auth/login  | 로그인        | X   |
+| POST   | /auth/signup | 회원가입      | X   |
+
+- 모든 할 일 관련 API는 Cognito 인증 토큰 필요
+
+### 요청 처리 시퀀스 다이어그램 (예: 할 일 목록 조회)
+
+<p align="center">
+  <img src="./diagrams/sequence_diagram.svg" alt="요청 처리 시퀀스 다이어그램" width="800" />
+</p>
+
+## 5. UI/UX 설계
+
+- **반응형 레이아웃**: 모바일/PC 모두 지원
+- **다크모드/라이트모드 지원**
+- **심플하고 직관적인 디자인**
+- **상태/우선순위 필터, 정렬, 검색 기능**
+- **접근성 고려 (ARIA, 키보드 네비게이션 등)**
+
+### UI 와이어프레임
+
+<p align="center">
+  <strong>모바일 뷰</strong><br>
+  <img src="./diagrams/mobile_view.svg" alt="모바일 와이어프레임" width="300" />
+</p>
+<p align="center">
+  <strong>데스크톱 뷰</strong><br>
+  <img src="./diagrams/desktop_view.svg" alt="데스크톱 와이어프레임" width="800" />
+</p>
+
+## 6. 개발 및 배포 전략
+
+- **1차**: 프론트엔드만(React, 로컬스토리지)으로 CRUD 구현
+- **2차**: 백엔드(AWS Lambda, DynamoDB) 연동
+- **3차**: 인증(AWS Cognito) 연동
+- **4차**: UI/UX 개선, 반응형, 다크모드
+- **5차**: CI/CD, 자동 배포 파이프라인 구축
+
+---
+
+이 설계서를 기반으로 각 단계별로 TDD 및 상세 구현을 진행할 수 있습니다. 추가로 상세 설계가 필요한 부분이 있다면 말씀해 주세요.

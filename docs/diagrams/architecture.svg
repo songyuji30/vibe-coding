@@ -1,0 +1,144 @@
+<svg width="800" height="450" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .label { font-family: sans-serif; font-size: 12px; }
+    .title { font-family: sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; }
+    .component { stroke-width: 1.5; }
+    .arrow { marker-end: url(#arrowhead); }
+    .dashed-arrow { marker-end: url(#arrowhead); stroke-dasharray: 4; }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" />
+    </marker>
+  </defs>
+
+  <!-- Request Flow -->
+  <text x="400" y="30" class="title">Todo App - 상세 아키텍처</text>
+  <rect x="10" y="50" width="780" height="230" rx="10" ry="10" fill="none" stroke="#ccc"/>
+  <text x="400" y="70" class="title" fill="#555">사용자 요청 흐름 (User Request Flow)</text>
+
+  <!-- User -->
+  <g transform="translate(40, 150)">
+    <circle cx="25" cy="25" r="25" fill="#e3f2fd" stroke="#90caf9" class="component"/>
+    <text x="25" y="30" text-anchor="middle" class="label">사용자</text>
+  </g>
+
+  <!-- Browser/React SPA -->
+  <g transform="translate(140, 150)">
+    <rect x="0" y="0" width="100" height="50" rx="5" fill="#e8f5e9" stroke="#a5d6a7" class="component"/>
+    <text x="50" y="25" text-anchor="middle" class="label">React SPA</text>
+    <text x="50" y="40" text-anchor="middle" class="label">(Browser)</text>
+  </g>
+
+  <!-- AWS Cloud -->
+  <rect x="260" y="90" width="520" height="180" rx="10" ry="10" fill="#fff8e1" stroke="#ffecb3" />
+  <text x="520" y="110" class="label" font-weight="bold">AWS Cloud</text>
+  
+  <!-- Github Pages -->
+  <g transform="translate(140, 220)">
+      <rect x="0" y="0" width="100" height="40" rx="5" fill="#fce4ec" stroke="#f8bbd0" class="component"/>
+      <text x="50" y="25" text-anchor="middle" class="label">Github Pages</text>
+  </g>
+
+  <!-- API Gateway -->
+  <g transform="translate(280, 150)">
+    <rect x="0" y="0" width="100" height="50" rx="5" fill="#ede7f6" stroke="#d1c4e9" class="component"/>
+    <text x="50" y="30" text-anchor="middle" class="label">API Gateway</text>
+  </g>
+
+  <!-- Cognito -->
+  <g transform="translate(420, 210)">
+    <rect x="0" y="0" width="80" height="40" rx="5" fill="#e1f5fe" stroke="#b3e5fc" class="component"/>
+    <text x="40" y="25" text-anchor="middle" class="label">Cognito</text>
+  </g>
+
+  <!-- Lambda -->
+  <g transform="translate(420, 150)">
+    <rect x="0" y="0" width="80" height="50" rx="5" fill="#fbe9e7" stroke="#ffccbc" class="component"/>
+    <text x="40" y="30" text-anchor="middle" class="label">Lambda</text>
+  </g>
+
+  <!-- DynamoDB -->
+  <g transform="translate(540, 150)">
+    <rect x="0" y="0" width="90" height="50" rx="5" fill="#e3f2fd" stroke="#bbdefb" class="component"/>
+    <text x="45" y="30" text-anchor="middle" class="label">DynamoDB</text>
+  </g>
+
+  <!-- Arrows for Request Flow -->
+  <line x1="90" y1="175" x2="140" y2="175" stroke="#333" class="arrow" />
+  <text x="110" y="170" class="label">HTTPS</text>
+  
+  <path d="M 190 150 Q 190 220, 140 240" stroke="#333" fill="none" class="arrow" />
+  <text x="170" y="210" class="label">Serve</text>
+
+  <line x1="240" y1="175" x2="280" y2="175" stroke="#333" class="arrow" />
+  <text x="250" y="170" class="label">API Call</text>
+
+  <line x1="380" y1="175" x2="420" y2="175" stroke="#333" class="arrow" />
+  <text x="390" y="170" class="label">Invoke</text>
+
+  <line x1="500" y1="175" x2="540" y2="175" stroke="#333" class="arrow" />
+  <text x="510" y="170" class="label">CRUD</text>
+
+  <path d="M 240 165 Q 330 220, 420 230" stroke="#333" fill="none" class="arrow" />
+  <text x="330" y="210" class="label">Auth</text>
+
+
+  <!-- CI/CD Flow -->
+  <rect x="10" y="290" width="780" height="150" rx="10" ry="10" fill="none" stroke="#ccc"/>
+  <text x="400" y="310" class="title" fill="#555">CI/CD 흐름 (Deployment Flow)</text>
+
+  <!-- Developer -->
+  <g transform="translate(40, 350)">
+    <circle cx="25" cy="25" r="25" fill="#fce4ec" stroke="#f8bbd0" class="component"/>
+    <text x="25" y="30" text-anchor="middle" class="label">개발자</text>
+  </g>
+
+  <!-- Github Repo -->
+  <g transform="translate(140, 350)">
+    <rect x="0" y="0" width="100" height="50" rx="5" fill="#e0f7fa" stroke="#b2ebf2" class="component"/>
+    <text x="50" y="30" text-anchor="middle" class="label">Github Repo</text>
+  </g>
+
+  <!-- Github Actions -->
+  <g transform="translate(280, 350)">
+    <rect x="0" y="0" width="100" height="50" rx="5" fill="#f9fbe7" stroke="#f0f4c3" class="component"/>
+    <text x="50" y="30" text-anchor="middle" class="label">Github Actions</text>
+  </g>
+
+  <!-- AWS CDK -->
+  <g transform="translate(420, 350)">
+    <rect x="0" y="0" width="80" height="50" rx="5" fill="#f3e5f5" stroke="#e1bee7" class="component"/>
+    <text x="40" y="30" text-anchor="middle" class="label">AWS CDK</text>
+  </g>
+
+  <!-- Deployed Resources -->
+  <g transform="translate(540, 350)">
+    <rect x="0" y="0" width="220" height="50" rx="5" fill="#e8eaf6" stroke="#c5cae9" class="component"/>
+    <text x="110" y="25" text-anchor="middle" class="label">Deployed AWS Resources</text>
+    <text x="110" y="40" text-anchor="middle" class="label">(API GW, Lambda, DynamoDB)</text>
+  </g>
+  
+  <!-- Deployed FE -->
+   <g transform="translate(420, 400)">
+    <rect x="0" y="0" width="100" height="40" rx="5" fill="#fce4ec" stroke="#f8bbd0" class="component"/>
+    <text x="50" y="25" text-anchor="middle" class="label">Github Pages</text>
+  </g>
+
+  <!-- Arrows for CI/CD Flow -->
+  <line x1="90" y1="375" x2="140" y2="375" stroke="#333" class="dashed-arrow" />
+  <text x="100" y="370" class="label">Git Push</text>
+
+  <line x1="240" y1="375" x2="280" y2="375" stroke="#333" class="dashed-arrow" />
+  <text x="250" y="370" class="label">Trigger</text>
+
+  <line x1="380" y1="375" x2="420" y2="375" stroke="#333" class="dashed-arrow" />
+  <text x="390" y="370" class="label">Deploy BE</text>
+  
+  <path d="M 380 365 Q 420 400, 420 420" stroke="#333" fill="none" class="dashed-arrow" />
+  <text x="380" y="405" class="label">Deploy FE</text>
+
+  <line x1="500" y1="375" x2="540" y2="375" stroke="#333" class="dashed-arrow" />
+  <text x="510" y="370" class="label">Provision</text>
+</svg>
