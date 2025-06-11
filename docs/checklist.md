@@ -70,7 +70,6 @@
   - [ ] Github Actions 등으로 테스트/배포 자동화
   - > **Commit:** `ci: Setup CI/CD pipeline for monorepo`
 
-
 ## 5단계: 백엔드(Serverless) 및 연동
 - [ ] **5-1. 백엔드 앱 초기화 및 인프라 세팅**
   - [ ] `apps/backend`에 AWS CDK 프로젝트 생성
