@@ -3,11 +3,14 @@
 모든 소스는 **모노레포(Monorepo)** 구조로 통합 관리합니다. 코어 비즈니스 로직은 TDD를 원칙으로 하고, 각 기능 단위별로 커밋합니다.
 
 ## 1단계: 모노레포 및 프론트엔드 초기화
-- [ ] **1-1. 모노레포 환경 및 워크스페이스 설정**
-  - [ ] pnpm 또는 yarn workspaces로 루트 워크스페이스 구성
-  - [ ] `apps/frontend`, `apps/backend` 디렉터리 생성
-  - [ ] 루트 및 각 앱별 package.json 작성
+- [x] **1-1. 모노레포 환경 및 워크스페이스 설정**
+  - [x] pnpm 또는 yarn workspaces로 루트 워크스페이스 구성 (package.json, pnpm-workspace.yaml)
+  - [x] `apps/frontend`, `apps/backend` 디렉터리 생성
+  - [x] 루트 및 각 앱별 package.json 작성
   - > **Commit:** `feat: Setup monorepo structure and workspaces`
+  - [작업 내역]
+    - 루트: package.json, pnpm-workspace.yaml 생성
+    - apps/frontend, apps/backend 디렉터리 및 각 package.json 생성
 - [ ] **1-2. 프론트엔드 앱(Vite+React+Mantine) 초기화**
   - [ ] `apps/frontend`에 Vite+React 프로젝트 생성
   - [ ] Mantine UI 설치 및 `MantineProvider` 설정

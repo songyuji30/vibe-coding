@@ -1,0 +1,7 @@
+{
+  "name": "windsurf-monorepo",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ]
+}
