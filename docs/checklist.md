@@ -11,11 +11,14 @@
   - [작업 내역]
     - 루트: package.json, pnpm-workspace.yaml 생성
     - apps/frontend, apps/backend 디렉터리 및 각 package.json 생성
+    - MantineProvider props 최신화(main.tsx, withGlobalStyles/withNormalizeCSS 제거)
+    - husky pre-commit hook 적용: 실행 코드(src, public, services) 변경 시 lint fix, build, test 자동 실행
 - [x] **1-2. 프론트엔드 앱(Vite+React+Mantine) 초기화**
   - [x] `apps/frontend`에 Vite+React 프로젝트 생성
   - [x] Mantine UI 설치 및 `MantineProvider` 설정
   - [x] ESLint, Prettier 설정
-  - > **Commit:** `feat(frontend): Initialize Vite+React+Mantine app`
+  - [x] MantineProvider에서 더 이상 지원되지 않는 withGlobalStyles, withNormalizeCSS props 제거(main.tsx)
+  - > **Commit:** `feat(frontend): Initialize Vite+React+Mantine app & fix MantineProvider props`
 
 ## 2단계: 프론트엔드 핵심 로직 및 UI
 - [ ] **2-1. Todo CRUD 서비스 및 테스트 (TDD)**

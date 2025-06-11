@@ -9,6 +9,13 @@ Windsurf는 프론트엔드(React+Mantine)와 백엔드(Serverless, AWS)로 구�
 - **CI/CD**: Github Actions 기반 테스트 및 자동 배포
 - **설계/요건/체크리스트 문서화**: `docs/` 폴더에 상세 관리
 
+## 개발 환경 및 워크플로우
+- pnpm 기반 Monorepo
+- Vite + React + Mantine 프론트엔드
+- AWS CDK + Lambda 백엔드
+- TDD 및 ESLint/Prettier 적용
+- 커밋 시 husky pre-commit hook을 통해 실행 코드(src, public, services) 변경 시 lint fix, build, test 자동 실행
+
 ## 폴더 구조 (요약)
 
 ```

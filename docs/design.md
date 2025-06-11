@@ -126,8 +126,11 @@ root/
 ├── packages/                    # (선택) 공통 유틸리티, 타입 등 공유 패키지
 ├── docs/                        # 설계 및 문서
 ├── node_modules/
-├── package.json                 # 루트 패키지 관리
-├── pnpm-workspace.yaml          # (pnpm 사용 시) 워크스페이스 설정
+├── package.json                 # 개발 환경 및 자동화
+- pnpm 기반 workspace
+- ESLint, Prettier, 타입스크립트 적용
+- Vitest 기반 테스트
+- husky pre-commit hook: 실행 코드(src, public, services) 변경 시 lint fix, build, test 자동 실행
 └── ...
 ```
 
