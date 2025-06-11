@@ -11,10 +11,10 @@
   - [작업 내역]
     - 루트: package.json, pnpm-workspace.yaml 생성
     - apps/frontend, apps/backend 디렉터리 및 각 package.json 생성
-- [ ] **1-2. 프론트엔드 앱(Vite+React+Mantine) 초기화**
-  - [ ] `apps/frontend`에 Vite+React 프로젝트 생성
-  - [ ] Mantine UI 설치 및 `MantineProvider` 설정
-  - [ ] ESLint, Prettier 설정
+- [x] **1-2. 프론트엔드 앱(Vite+React+Mantine) 초기화**
+  - [x] `apps/frontend`에 Vite+React 프로젝트 생성
+  - [x] Mantine UI 설치 및 `MantineProvider` 설정
+  - [x] ESLint, Prettier 설정
   - > **Commit:** `feat(frontend): Initialize Vite+React+Mantine app`
 
 ## 2단계: 프론트엔드 핵심 로직 및 UI
