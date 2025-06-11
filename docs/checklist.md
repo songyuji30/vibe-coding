@@ -51,42 +51,37 @@
   - [x] useTodos 커스텀 훅 분리 및 App 적용
   - > **Commit:** `refactor(frontend): Extract useTodos custom hook for state management`
 
-## 3단계: 백엔드(Serverless) 및 연동
-- [ ] **3-1. 백엔드 앱 초기화 및 인프라 세팅**
-  - [ ] `apps/backend`에 AWS CDK 프로젝트 생성
-  - [ ] DynamoDB, Lambda, API Gateway 스택 정의
-  - > **Commit:** `feat(backend): Initialize CDK project and infra stack`
-- [ ] **3-2. Lambda CRUD 함수 (TDD)**
-  - [ ] 각 Lambda 함수별 테스트 코드 작성 및 구현
-  - > **Commit:** `feat(backend/lambda): Implement CRUD Lambda functions (TDD)`
-- [ ] **3-3. API Gateway-Lambda 연동 및 테스트**
-  - [ ] 엔드포인트와 Lambda 함수 연결, 동작 테스트
-  - > **Commit:** `feat(backend): Connect API Gateway and Lambda`
-- [ ] **3-4. 프론트엔드-백엔드 연동**
-  - [ ] `apiClient` 모듈 작성, 서비스 로직을 API 호출로 리팩터링
-  - > **Commit:** `refactor(frontend): Replace local logic with backend API calls`
-- [ ] **3-5. 프론트엔드 통합테스트**
+## 3단계: 프론트엔드 앱 통합(e2e) 테스트
+- [ ] **3-1. 프론트엔드 통합테스트**
   - [ ] 프론트엔드 전체 통합(e2e) 테스트 코드 작성 및 실행
   - > **Commit:** `test(frontend): Add e2e integration tests for UI/서비스 연동`
 
-## 4단계: 인증 및 고급 기능
-- [ ] **4-1. Cognito 인증 인프라(CDK) 및 연동**
-  - [ ] Cognito User Pool 및 Authorizer 추가, API 인증 적용
-  - > **Commit:** `feat(auth): Add Cognito infra and secure APIs`
-- [ ] **4-2. 프론트엔드 인증 UI 및 로직**
-  - [ ] 회원가입, 로그인, 인증 토큰 처리
-  - > **Commit:** `feat(frontend/auth): Implement authentication UI and logic`
-
-## 5단계: UI/UX 고도화 및 CI/CD
-- [ ] **5-1. 필터, 검색, 정렬 등 고급 UI 기능**
+## 4단계: UI/UX 고도화 및 CI/CD
+- [ ] **4-1. 필터, 검색, 정렬 등 고급 UI 기능**
   - [ ] 상태/우선순위 필터, 제목 검색, 정렬 등
   - > **Commit:** `feat(frontend/ui): Add filtering, search, and sorting`
-- [ ] **5-2. 반응형/다크모드(Mantine 기능 활용)**
+- [ ] **4-2. 반응형/다크모드(Mantine 기능 활용)**
   - [x] Mantine의 컬러스킴 및 반응형 시스템 적용 (useMediaQuery, Affix 등)
   - [x] 데스크톱/모바일 와이어프레임 기반 반응형 레이아웃 구현 (UI 구조/배치 완료)
   - [x] lint 에러, 의존성(@tabler/icons-react) 및 타입 선언(global.d.ts 통한 CSS import) 문제 해결, 빌드 정상화
   - [ ] 다크모드 컬러스킴/세부 스타일 개선(추가 예정)
   - > **Commit:** `feat(frontend/ui): Apply responsive design and dark mode`
-- [ ] **5-3. CI/CD 파이프라인 구축**
+- [ ] **4-3. CI/CD 파이프라인 구축**
   - [ ] Github Actions 등으로 테스트/배포 자동화
   - > **Commit:** `ci: Setup CI/CD pipeline for monorepo`
+
+
+## 5단계: 백엔드(Serverless) 및 연동
+- [ ] **5-1. 백엔드 앱 초기화 및 인프라 세팅**
+  - [ ] `apps/backend`에 AWS CDK 프로젝트 생성
+  - [ ] DynamoDB, Lambda, API Gateway 스택 정의
+  - > **Commit:** `feat(backend): Initialize CDK project and infra stack`
+- [ ] **5-2. Lambda CRUD 함수 (TDD)**
+  - [ ] 각 Lambda 함수별 테스트 코드 작성 및 구현
+  - > **Commit:** `feat(backend/lambda): Implement CRUD Lambda functions (TDD)`
+- [ ] **5-3. API Gateway-Lambda 연동 및 테스트**
+  - [ ] 엔드포인트와 Lambda 함수 연결, 동작 테스트
+  - > **Commit:** `feat(backend): Connect API Gateway and Lambda`
+- [ ] **5-4. 프론트엔드-백엔드 연동**
+  - [ ] `apiClient` 모듈 작성, 서비스 로직을 API 호출로 리팩터링
+  - > **Commit:** `refactor(frontend): Replace local logic with backend API calls`
