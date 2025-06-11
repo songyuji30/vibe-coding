@@ -65,6 +65,9 @@
 - [ ] **3-4. 프론트엔드-백엔드 연동**
   - [ ] `apiClient` 모듈 작성, 서비스 로직을 API 호출로 리팩터링
   - > **Commit:** `refactor(frontend): Replace local logic with backend API calls`
+- [ ] **3-5. 프론트엔드 통합테스트**
+  - [ ] 프론트엔드 전체 통합(e2e) 테스트 코드 작성 및 실행
+  - > **Commit:** `test(frontend): Add e2e integration tests for UI/서비스 연동`
 
 ## 4단계: 인증 및 고급 기능
 - [ ] **4-1. Cognito 인증 인프라(CDK) 및 연동**
