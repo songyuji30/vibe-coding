@@ -19,7 +19,7 @@ root/
 ├── apps/
 │   ├── frontend/   # 프론트엔드(React+Mantine)
 │   └── backend/    # 백엔드(AWS Lambda, CDK 등)
-├── packages/       # (선택) 공통 유틸리티, 타입 등 공유 패키지
+├── shared/         # 공통 모듈 (타입, 유틸리티 등)
 ├── docs/           # 설계 및 문서
 ├── node_modules/   # 루트 의존성
 ├── package.json    # 루트 패키지 관리

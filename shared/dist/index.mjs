@@ -1,0 +1,238 @@
+var __defProp = Object.defineProperty;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
+
+// src/types/common.ts
+function isAppError(error) {
+  return typeof error === "object" && error !== null && "code" in error && "message" in error;
+}
+
+// src/utils/formatters.ts
+function formatDateTime(date) {
+  const d = typeof date === "string" ? new Date(date) : date;
+  return d.toISOString().replace("T", " ").substring(0, 16);
+}
+function formatDuration(ms) {
+  const seconds = Math.floor(ms / 1e3);
+  const minutes = Math.floor(seconds / 60);
+  const hours = Math.floor(minutes / 60);
+  const days = Math.floor(hours / 24);
+  if (days > 0) {
+    return `${days}d ${hours % 24}h`;
+  }
+  if (hours > 0) {
+    return `${hours}h ${minutes % 60}m`;
+  }
+  if (minutes > 0) {
+    return `${minutes}m ${seconds % 60}s`;
+  }
+  return `${seconds}s`;
+}
+function truncateText(text, maxLength) {
+  if (text.length <= maxLength) return text;
+  return `${text.substring(0, maxLength)}...`;
+}
+function formatCurrency(amount, currency = "USD") {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency
+  }).format(amount);
+}
+
+// src/utils/validators.ts
+function isValidEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+}
+function isValidUrl(url) {
+  try {
+    new URL(url);
+    return true;
+  } catch {
+    return false;
+  }
+}
+function isValidDateString(dateString) {
+  return !Number.isNaN(new Date(dateString).getTime());
+}
+function validatePassword(password, options = {}) {
+  const {
+    minLength = 8,
+    requireUppercase = true,
+    requireLowercase = true,
+    requireNumber = true,
+    requireSpecialChar = true
+  } = options;
+  if (password.length < minLength) {
+    return {
+      isValid: false,
+      message: `Password must be at least ${minLength} characters long`
+    };
+  }
+  if (requireUppercase && !/[A-Z]/.test(password)) {
+    return {
+      isValid: false,
+      message: "Password must contain at least one uppercase letter"
+    };
+  }
+  if (requireLowercase && !/[a-z]/.test(password)) {
+    return {
+      isValid: false,
+      message: "Password must contain at least one lowercase letter"
+    };
+  }
+  if (requireNumber && !/\d/.test(password)) {
+    return {
+      isValid: false,
+      message: "Password must contain at least one number"
+    };
+  }
+  if (requireSpecialChar && !/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+    return {
+      isValid: false,
+      message: "Password must contain at least one special character"
+    };
+  }
+  return { isValid: true };
+}
+
+// src/utils/error-handler.ts
+function createError(message, code, statusCode = 500, details) {
+  const error = new Error(message);
+  error.code = code;
+  error.statusCode = statusCode;
+  if (details) {
+    error.details = details;
+  }
+  return error;
+}
+function handleError(error, context) {
+  console.error("Error occurred:", error, context);
+  if (isAppError2(error)) {
+    return {
+      status: error.statusCode || 500,
+      error: error.message,
+      code: error.code,
+      details: error.details
+    };
+  }
+  if (error instanceof Error) {
+    return {
+      status: 500,
+      error: error.message || "Internal Server Error",
+      code: "INTERNAL_ERROR"
+    };
+  }
+  return {
+    status: 500,
+    error: "An unknown error occurred",
+    code: "UNKNOWN_ERROR"
+  };
+}
+function isAppError2(error) {
+  return typeof error === "object" && error !== null && "code" in error && "message" in error;
+}
+
+// src/components/common/LoadingSpinner.tsx
+import { Box, Loader } from "@mantine/core";
+import { jsx } from "react/jsx-runtime";
+function LoadingSpinner({
+  size = "md",
+  className = "",
+  center = true,
+  color
+}) {
+  const spinner = /* @__PURE__ */ jsx(Loader, { size, color });
+  if (center) {
+    return /* @__PURE__ */ jsx(Box, { className: `flex items-center justify-center p-4 ${className}`, children: spinner });
+  }
+  return spinner;
+}
+
+// src/components/common/ErrorBoundary.tsx
+import { Component } from "react";
+import { Alert, Box as Box2, Button, Text } from "@mantine/core";
+import { IconAlertCircle } from "@tabler/icons-react";
+import { jsx as jsx2, jsxs } from "react/jsx-runtime";
+var ErrorBoundary = class extends Component {
+  constructor(props) {
+    super(props);
+    __publicField(this, "handleReset", () => {
+      this.setState({ hasError: false, error: null });
+    });
+    this.state = { hasError: false, error: null };
+  }
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
+  }
+  componentDidCatch(error, errorInfo) {
+    console.error("ErrorBoundary caught an error:", error, errorInfo);
+    if (this.props.onError) {
+      this.props.onError(error, errorInfo);
+    }
+  }
+  render() {
+    if (this.state.hasError) {
+      if (this.props.fallback) {
+        return this.props.fallback;
+      }
+      return /* @__PURE__ */ jsx2(Box2, { p: "md", maw: 800, mx: "auto", children: /* @__PURE__ */ jsxs(
+        Alert,
+        {
+          icon: /* @__PURE__ */ jsx2(IconAlertCircle, { size: "1rem" }),
+          title: "Something went wrong",
+          color: "red",
+          variant: "outline",
+          mb: "md",
+          children: [
+            /* @__PURE__ */ jsx2(Text, { mb: "md", children: this.state.error?.message || "An unexpected error occurred" }),
+            /* @__PURE__ */ jsx2(Button, { color: "red", onClick: this.handleReset, children: "Try again" })
+          ]
+        }
+      ) });
+    }
+    return this.props.children;
+  }
+};
+
+// src/components/common/PageContainer.tsx
+import { Box as Box3, useMantineTheme } from "@mantine/core";
+import { jsx as jsx3 } from "react/jsx-runtime";
+function PageContainer({
+  children,
+  maxWidth = "xl",
+  withTopPadding = true,
+  withBottomPadding = true,
+  className = "",
+  ...rest
+}) {
+  const theme = useMantineTheme();
+  return /* @__PURE__ */ jsx3(
+    Box3,
+    {
+      className: `w-full mx-auto px-4 sm:px-6 lg:px-8 ${withTopPadding ? "pt-8" : ""} ${withBottomPadding ? "pb-12" : ""} ${className}`,
+      style: {
+        maxWidth: typeof maxWidth === "string" && theme.breakpoints[maxWidth] ? theme.breakpoints[maxWidth] : maxWidth
+      },
+      ...rest,
+      children
+    }
+  );
+}
+export {
+  ErrorBoundary,
+  LoadingSpinner,
+  PageContainer,
+  createError,
+  formatCurrency,
+  formatDateTime,
+  formatDuration,
+  handleError,
+  isAppError,
+  isValidDateString,
+  isValidEmail,
+  isValidUrl,
+  truncateText,
+  validatePassword
+};
+//# sourceMappingURL=index.mjs.map

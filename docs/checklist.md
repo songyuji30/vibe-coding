@@ -19,12 +19,11 @@
   - [x] husky pre-commit hook 적용: 실행 코드(src, public, services) 변경 시 lint fix, build, test 자동 실행
   - > **Commit:** `feat(frontend): Initialize Vite+React+Mantine app & fix MantineProvider props`
 
-- [ ] **1-3. 공유 유틸리티 및 타입**
-  - [ ] `packages` 디렉토리 생성 및 공유 설정
-  - [ ] 공통 타입 정의 (`types/*.d.ts`)
-  - [ ] 유틸리티 함수 (날짜 포맷팅, 유효성 검사 등)
-  - [ ] 공통 컴포넌트 (로딩, 에러 바운더리 등)
-  - > **Commit:** `feat(shared): Add common types and utilities`
+- [x] **1-3. 공통 모듈 설정**
+  - [x] `shared` 모듈 생성 및 프로젝트 구조 단순화
+  - [x] 타입, 상수, 유틸리티 등 공통 코드 작성
+  - [x] 프론트엔드에서 `shared` 모듈 참조 테스트
+  - > **Commit:** `feat(shared): Setup shared module and add common code`
 
 ## 2단계: 프론트엔드 핵심 로직 및 UI
 - [ ] **2-1. Todo CRUD 서비스 및 테스트 (TDD)**
