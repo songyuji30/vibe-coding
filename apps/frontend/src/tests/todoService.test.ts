@@ -3,8 +3,7 @@ import {
   getTodos,
   addTodo,
   updateTodo,
-  deleteTodo,
-  Todo
+  deleteTodo
 } from '../services/todoService';
 
 // localStorage mocking
