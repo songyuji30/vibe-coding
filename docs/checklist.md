@@ -26,9 +26,9 @@
   - > **Commit:** `feat(shared): Setup shared module and add common code`
 
 ## 2단계: 프론트엔드 핵심 로직 및 UI
-- [ ] **2-1. Todo CRUD 서비스 및 테스트 (TDD)**
-  - [ ] `apps/frontend/services/todoService.ts` 생성 및 테스트 코드 작성
-  - [ ] 로컬스토리지 기반 CRUD 함수 구현 및 테스트 통과
+- [x] **2-1. Todo CRUD 서비스 및 테스트 (TDD)**
+  - [x] `apps/frontend/services/todoService.ts` 생성 및 테스트 코드 작성
+  - [x] 로컬스토리지 기반 CRUD 함수 구현 및 테스트 통과
   - > **Commit:** `feat(frontend/core): Implement localStorage CRUD logic (TDD)`
 - [x] **2-2. 기본 UI 컴포넌트(Mantine 기반)**
   - [x] `TodoForm`, `TodoList`, `TodoItem` 등 구현 (Mantine 컴포넌트 활용)
