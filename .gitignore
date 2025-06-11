@@ -1,1 +1,4 @@
 node_modules
+
+# Playwright E2E 테스트 결과
+apps/frontend/playwright-report/
