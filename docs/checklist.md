@@ -30,11 +30,11 @@
   - [ ] `apps/frontend/services/todoService.ts` 생성 및 테스트 코드 작성
   - [ ] 로컬스토리지 기반 CRUD 함수 구현 및 테스트 통과
   - > **Commit:** `feat(frontend/core): Implement localStorage CRUD logic (TDD)`
-- [ ] **2-2. 기본 UI 컴포넌트(Mantine 기반)**
-  - [ ] `TodoForm`, `TodoList`, `TodoItem` 등 구현 (Mantine 컴포넌트 활용)
+- [x] **2-2. 기본 UI 컴포넌트(Mantine 기반)**
+  - [x] `TodoForm`, `TodoList`, `TodoItem` 등 구현 (Mantine 컴포넌트 활용)
   - > **Commit:** `feat(frontend/ui): Implement basic UI components with Mantine`
-- [ ] **2-3. UI와 서비스 연동**
-  - [ ] UI 컴포넌트와 서비스 로직 연동 (추가/수정/삭제/조회)
+- [x] **2-3. UI와 서비스 연동**
+  - [x] UI 컴포넌트와 서비스 로직 연동 (추가/수정/삭제/조회)
   - > **Commit:** `feat(frontend): Connect UI components with service logic`
 
 ## 3단계: 백엔드(Serverless) 및 연동
