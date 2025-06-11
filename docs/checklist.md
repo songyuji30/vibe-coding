@@ -36,6 +36,9 @@
 - [x] **2-3. UI와 서비스 연동**
   - [x] UI 컴포넌트와 서비스 로직 연동 (추가/수정/삭제/조회)
   - > **Commit:** `feat(frontend): Connect UI components with service logic`
+- [x] **2-4. 상태 관리 커스텀 훅 분리**
+  - [x] useTodos 커스텀 훅 분리 및 App 적용
+  - > **Commit:** `refactor(frontend): Extract useTodos custom hook for state management`
 
 ## 3단계: 백엔드(Serverless) 및 연동
 - [ ] **3-1. 백엔드 앱 초기화 및 인프라 세팅**
