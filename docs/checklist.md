@@ -68,7 +68,10 @@
   - [ ] 상태/우선순위 필터, 제목 검색, 정렬 등
   - > **Commit:** `feat(frontend/ui): Add filtering, search, and sorting`
 - [ ] **5-2. 반응형/다크모드(Mantine 기능 활용)**
-  - [ ] Mantine의 컬러스킴 및 반응형 시스템 적용
+  - [x] Mantine의 컬러스킴 및 반응형 시스템 적용 (useMediaQuery, Affix 등)
+  - [x] 데스크톱/모바일 와이어프레임 기반 반응형 레이아웃 구현 (UI 구조/배치 완료)
+  - [x] lint 에러 및 의존성(@tabler/icons-react) 해결, 빌드 정상화
+  - [ ] 다크모드 컬러스킴/세부 스타일 개선(추가 예정)
   - > **Commit:** `feat(frontend/ui): Apply responsive design and dark mode`
 - [ ] **5-3. CI/CD 파이프라인 구축**
   - [ ] Github Actions 등으로 테스트/배포 자동화

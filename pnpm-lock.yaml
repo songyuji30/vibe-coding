@@ -27,6 +27,9 @@ importers:
       '@mantine/notifications':
         specifier: ^8.1.0
         version: 8.1.0(@mantine/core@8.1.0(@mantine/hooks@8.1.0(react@19.1.0))(@types/react@19.1.7)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(@mantine/hooks@8.1.0(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@tabler/icons-react':
+        specifier: ^3.34.0
+        version: 3.34.0(react@19.1.0)
       react:
         specifier: ^19.1.0
         version: 19.1.0
@@ -97,6 +100,40 @@ importers:
       '@mantine/hooks':
         specifier: ^7.13.0
         version: 7.17.8(react@18.3.1)
+      react:
+        specifier: ^18.2.0
+        version: 18.3.1
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.3.1(react@18.3.1)
+    devDependencies:
+      '@types/node':
+        specifier: ^20.0.0
+        version: 20.19.0
+      '@types/react':
+        specifier: ^18.2.0
+        version: 18.3.23
+      '@types/react-dom':
+        specifier: ^18.2.0
+        version: 18.3.7(@types/react@18.3.23)
+      tsup:
+        specifier: ^8.0.0
+        version: 8.5.0(postcss@8.5.4)(typescript@5.8.3)
+      typescript:
+        specifier: ^5.0.0
+        version: 5.8.3
+
+  shared:
+    dependencies:
+      '@mantine/core':
+        specifier: ^7.13.0
+        version: 7.17.8(@mantine/hooks@7.17.8(react@18.3.1))(@types/react@18.3.23)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@mantine/hooks':
+        specifier: ^7.13.0
+        version: 7.17.8(react@18.3.1)
+      '@tabler/icons-react':
+        specifier: ^3.11.0
+        version: 3.34.0(react@18.3.1)
       react:
         specifier: ^18.2.0
         version: 18.3.1
@@ -703,6 +740,14 @@ packages:
     resolution: {integrity: sha512-LpHiJRwkaVz/LqjHjK8LCi8osq7elmpwujwbXKNW88bM8eeGxavJIKKjkjpMHAh/2xfnrt1ZSnhTv41WYUHYmA==}
     cpu: [x64]
     os: [win32]
+
+  '@tabler/icons-react@3.34.0':
+    resolution: {integrity: sha512-OpEIR2iZsIXECtAIMbn1zfKfQ3zKJjXyIZlkgOGUL9UkMCFycEiF2Y8AVfEQsyre/3FnBdlWJvGr0NU47n2TbQ==}
+    peerDependencies:
+      react: '>= 16'
+
+  '@tabler/icons@3.34.0':
+    resolution: {integrity: sha512-jtVqv0JC1WU2TTEBN32D9+R6mc1iEBuPwLnBsWaR02SIEciu9aq5806AWkCHuObhQ4ERhhXErLEK7Fs+tEZxiA==}
 
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
@@ -3061,6 +3106,18 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.42.0':
     optional: true
+
+  '@tabler/icons-react@3.34.0(react@18.3.1)':
+    dependencies:
+      '@tabler/icons': 3.34.0
+      react: 18.3.1
+
+  '@tabler/icons-react@3.34.0(react@19.1.0)':
+    dependencies:
+      '@tabler/icons': 3.34.0
+      react: 19.1.0
+
+  '@tabler/icons@3.34.0': {}
 
   '@types/babel__core@7.20.5':
     dependencies:
