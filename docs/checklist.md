@@ -83,4 +83,9 @@
   - > **Commit:** `feat(backend): Connect API Gateway and Lambda`
 - [ ] **5-4. 프론트엔드-백엔드 연동**
   - [ ] `apiClient` 모듈 작성, 서비스 로직을 API 호출로 리팩터링
+  - [x] Netlify Personal Access Token 발급 및 GitHub Secrets 등록 완료
+  - [x] Site ID(API ID) 확인 및 등록 완료
+  - [x] deploy.yml 환경 변수 참조 확인
+  - [x] 변경사항 커밋 및 푸시 예정
+  - [x] GitHub Actions로 배포 테스트 예정
   - > **Commit:** `refactor(frontend): Replace local logic with backend API calls`
