@@ -1,5 +1,5 @@
 import type { Todo } from '../services/todoService';
-import { Checkbox, Table, ActionIcon, Card, Stack, Group, Badge, Text } from '@mantine/core';
+import { Checkbox, Table, ActionIcon, Group, Badge, Text } from '@mantine/core';
 import { IconEdit, IconTrash } from '@tabler/icons-react';
 
 export interface TodoListProps {
