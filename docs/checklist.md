@@ -4,21 +4,27 @@
 
 ## 1단계: 모노레포 및 프론트엔드 초기화
 - [x] **1-1. 모노레포 환경 및 워크스페이스 설정**
-  - [x] pnpm 또는 yarn workspaces로 루트 워크스페이스 구성 (package.json, pnpm-workspace.yaml)
+  - [x] pnpm 워크스페이스 설정 (package.json, pnpm-workspace.yaml)
   - [x] `apps/frontend`, `apps/backend` 디렉터리 생성
   - [x] 루트 및 각 앱별 package.json 작성
-  - > **Commit:** `feat: Setup monorepo structure and workspaces`
-  - [작업 내역]
-    - 루트: package.json, pnpm-workspace.yaml 생성
-    - apps/frontend, apps/backend 디렉터리 및 각 package.json 생성
-    - MantineProvider props 최신화(main.tsx, withGlobalStyles/withNormalizeCSS 제거)
-    - husky pre-commit hook 적용: 실행 코드(src, public, services) 변경 시 lint fix, build, test 자동 실행
+  - [x] ESLint, Prettier, TypeScript 공통 설정
+  - [x] Git hooks (Husky) 설정
+  - > **Commit:** `build: Initialize monorepo with pnpm workspaces`
+
 - [x] **1-2. 프론트엔드 앱(Vite+React+Mantine) 초기화**
   - [x] `apps/frontend`에 Vite+React 프로젝트 생성
   - [x] Mantine UI 설치 및 `MantineProvider` 설정
   - [x] ESLint, Prettier 설정
   - [x] MantineProvider에서 더 이상 지원되지 않는 withGlobalStyles, withNormalizeCSS props 제거(main.tsx)
+  - [x] husky pre-commit hook 적용: 실행 코드(src, public, services) 변경 시 lint fix, build, test 자동 실행
   - > **Commit:** `feat(frontend): Initialize Vite+React+Mantine app & fix MantineProvider props`
+
+- [ ] **1-3. 공유 유틸리티 및 타입**
+  - [ ] `packages` 디렉토리 생성 및 공유 설정
+  - [ ] 공통 타입 정의 (`types/*.d.ts`)
+  - [ ] 유틸리티 함수 (날짜 포맷팅, 유효성 검사 등)
+  - [ ] 공통 컴포넌트 (로딩, 에러 바운더리 등)
+  - > **Commit:** `feat(shared): Add common types and utilities`
 
 ## 2단계: 프론트엔드 핵심 로직 및 UI
 - [ ] **2-1. Todo CRUD 서비스 및 테스트 (TDD)**
