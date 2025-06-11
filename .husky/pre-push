@@ -1,0 +1,7 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# pre-push: E2E 테스트 통과 시에만 push 허용
+cd apps/frontend
+pnpm exec playwright test || exit 1
+cd ../..
